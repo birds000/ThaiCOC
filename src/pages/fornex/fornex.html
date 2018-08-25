@@ -1,0 +1,125 @@
+<ion-header>
+
+  <ion-navbar color="primary">
+    <ion-title>COC02 : แบบตอบกลับผู้สูงอายุ</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content class="grid-page">
+  <ion-grid>
+    <ion-row>
+      <ion-col col-12>
+        <h3>COC02 : แบบตอบกลับผู้สูงอายุ</h3>
+      </ion-col>
+    </ion-row>
+
+    <ion-row>
+      <ion-col col-6>
+        <p>HOSPCODE</p>
+      </ion-col>
+      <ion-col col-6>
+        <p>PID</p>
+      </ion-col>
+    </ion-row>
+
+    <ion-row>
+      <ion-col col-6>
+        <ion-input type="text" placeholder="123456"></ion-input>
+      </ion-col>
+      <ion-col col-6>
+        <ion-input type="text" placeholder="45685"></ion-input>
+      </ion-col>
+    </ion-row>
+
+    <ion-row>
+      <ion-col col-12>
+        <ion-list>
+        <ion-item>
+          <ion-label>เลือกแบบส่งต่อ</ion-label>
+          <ion-select>
+            <ion-option value="nes">NES</ion-option>
+            <ion-option value="n64">Nintendo64</ion-option>
+          </ion-select>
+        </ion-item>
+        </ion-list>
+      </ion-col>
+    </ion-row>
+
+    <ion-row>
+      <ion-col col-4>
+        <p>วันที่เยี่ยม</p>
+      </ion-col>
+      <ion-col col-8>
+        <ion-input type="text" placeholder="วว/ดด/ปปปป"></ion-input>
+      </ion-col>
+    </ion-row>
+
+    <ion-row>
+      <ion-col col-12>
+        <ion-list radio-group>
+          <p>ติดตามเยี่ยมผู้ป่วยที่บ้าน</p>
+          <ion-item>
+            <ion-label>พบผู้ปาวย</ion-label>
+            <ion-radio checked="true" value="พบผู้ปาวย"></ion-radio>
+          </ion-item>
+
+          <ion-item>
+            <ion-label>ไม่พบผู้ป่วย</ion-label>
+            <ion-radio value="ไม่พบผู้ป่วย"></ion-radio>
+          </ion-item>
+
+          <ion-item>
+            <ion-label>ผู้เสียชีวิต ระบุวันที่เสียชีวิต</ion-label>
+            <ion-radio value="python" disabled="ผู้เสียชีวิต"></ion-radio>
+          </ion-item>
+        </ion-list>
+      </ion-col>
+    </ion-row>
+    <p>ชื่อผู้ดูแลหลัก</p>
+    <ion-row>
+      <ion-col col-12>
+      <ion-input type="text" placeholder="firstname lastname"></ion-input>      
+      </ion-col>
+    </ion-row>
+
+    <ion-row>
+      <ion-col col-4>
+        <p>วันที่เสียชีวิต</p>
+      </ion-col>
+      <ion-col col-8>
+        <ion-input type="text" placeholder="วว/ดด/ปปปป"></ion-input>
+      </ion-col>
+    </ion-row>
+
+    <ion-row>
+      <ion-col col-12>
+        <ion-list radio-group>
+          <p>ติดตามเยี่ยมผู้ป่วยที่บ้าน</p>
+          <ion-item>
+            <ion-label>ไม่มี</ion-label>
+            <ion-radio checked="true" value="ไม่มี"></ion-radio>
+          </ion-item>
+
+          <ion-item>
+            <ion-label>มี</ion-label>
+            <ion-radio value="มี"></ion-radio>
+          </ion-item>
+        </ion-list>
+      </ion-col>
+    </ion-row>
+
+    <ion-row>
+      <ion-col col-12>
+        <div>
+          <p>พิกัดบ้านผู้ป่วย</p>
+          <ion-input type="text" placeholder="16.4419355"></ion-input>
+          <ion-input type="text" placeholder="102.8359921"></ion-input>
+        </div>
+        <button ion-button full>ใช้ตำแหน่งปัจจุบัน</button>
+      </ion-col>
+    </ion-row>
+
+  </ion-grid>
+</ion-content>

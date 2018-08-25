@@ -1,0 +1,37 @@
+<ion-menu [content]="content">
+
+  <ion-content class="grid-menu">
+    <ion-list>
+      <ion-grid >
+        <ion-row>
+          <ion-col col-4>
+            <img img width="100%" height="100%" src="assets/imgs/no-image.png" class="imageBox">
+           
+          </ion-col>
+          <ion-col col-8>
+            <p class="l pad">{{ perfix }} {{ firstName }} 
+              <br> {{ lastName }} </p>
+              <p class="xl pad"><b> {{ id }}</b>
+            </p>
+          </ion-col>
+        </ion-row>
+
+        <ion-row>
+          <ion-col col-12>
+            <p class="s pad">
+              <ion-icon name="md-pin" color="dark-green"></ion-icon>
+              {{ hospital }}</p>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+
+      <button menuClose ion-item *ngFor="let p of pages" (click)="openPage(p)" class="font-green">
+        {{p.title}}
+      </button>
+    </ion-list>
+  </ion-content>
+
+</ion-menu>
+
+<!-- Disable swipe-to-go-back because it's poor UX to combine STGB with side menus -->
+<ion-nav [root]="rootPage" #content swipeBackEnabled="false"></ion-nav>

@@ -1,0 +1,117 @@
+<ion-header>
+
+  <ion-navbar color="dark-green">
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Dashboard</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content class="grid-page">
+  <ion-card>
+    <div class="text-db-header">
+      รับ refer ทั้งหมด 524 คน
+    </div>
+
+    <ion-card-content>
+      <ion-row>
+        <ion-col col-7 class="text-center">
+          <chart [options]="chartOptions1" type="chart" style="width: 100%"></chart>
+        </ion-col>
+        <ion-col col-5> 
+          <div class="text-center">
+            <button ion-button clear (click)="gotoRecieve()" icon-left>
+              <ion-icon name="square" color="light-blue"></ion-icon>
+              <p>รอรับ</p>
+            </button>
+            <br>
+            <button ion-button clear (click)="gotoWorklist()" icon-left>
+              <ion-icon name="square" color="yellow"></ion-icon>
+              <p>รับแล้ว</p>
+            </button>
+          </div>
+        </ion-col>
+      </ion-row>
+      <br>
+      <br>
+      <br>
+
+      <ion-row>
+        <ion-col col-5>
+          <div class="text-center">
+            <p>รับแล้ว 339 คน</p>
+            <br>
+            <button ion-button clear (click)="gotoWorklist()" icon-left>
+              <ion-icon name="square" color="light-green"></ion-icon>
+              <p>กำลังดูแล</p>
+            </button>
+            <br>
+            <button ion-button clear (click)="gotoWorklist()" icon-left>
+              <ion-icon name="square" color="blue"></ion-icon>
+              <p> ดูแลครบ</p>
+            </button>
+          </div>
+        </ion-col>
+        <ion-col col-7 class="text-center">
+          <chart [options]="chartOptions2" type="chart"></chart>
+        </ion-col>
+      </ion-row>
+    </ion-card-content>
+
+  </ion-card>
+  <ion-card>
+    <div class="text-db-header">
+      ส่ง refer ทั้งหมด 524 คน
+    </div>
+
+    <ion-card-content>
+      <ion-row>
+        <ion-col col-7>
+          <chart [options]="chartOptions1" type="chart"></chart>
+        </ion-col>
+        <ion-col col-5>
+          <div class="text-center">
+            <button ion-button clear (click)="gotoRecieve()" icon-left>
+              <ion-icon name="square" color="light-blue"></ion-icon>
+              <p>รอรับ</p>
+            </button>
+            <br>
+            <button ion-button clear (click)="gotoWorklist()" icon-left>
+              <ion-icon name="square" color="yellow"></ion-icon>
+              <p> รับแล้ว</p>
+            </button>
+          </div>
+        </ion-col>
+      </ion-row>
+
+      <br>
+      <br>
+      <br>
+
+      <ion-row>
+        <ion-col col-5>
+          <div class="text-center">
+            <p>รับแล้ว 339 คน</p>
+            <br>
+            <button ion-button clear (click)="gotoWorklist()" icon-left>
+              <ion-icon name="square" color="light-green"></ion-icon>
+              <p>กำลังดูแล</p>
+            </button>
+            <br>
+            <button ion-button clear (click)="gotoWorklist()" icon-left>
+              <ion-icon name="square" color="blue"></ion-icon>
+              <p>ดูแลครบ</p>
+            </button>
+          </div>
+        </ion-col>
+        <ion-col col-7>
+          <chart [options]="chartOptions2" type="chart"></chart>
+        </ion-col>
+      </ion-row>
+    </ion-card-content>
+  </ion-card>
+
+</ion-content>

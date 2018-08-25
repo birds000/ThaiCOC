@@ -1,0 +1,49 @@
+<ion-header>
+
+  <ion-navbar color="dark-green">
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>เปลี่ยนหน่วยบริการ</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content class="grid-page">
+
+  <ion-grid>
+    <ion-row>
+      <ion-col col-12 class="text-center">
+        <p>ขณะนี้คุณอยู่หน่วยบริการ <b class="xl">03556</b></p>
+      </ion-col>
+      <ion-col col-12 class="text-center font-green">
+        <p>รพสต.บ้านนาโพธิ์ใต้ ตำบลนาโพธิ์กลาง</p>
+      </ion-col>
+    </ion-row>
+    <br>
+    <br>
+    <ion-row>
+      <ion-col col-12 class="text-center">
+        <p>หน่วยบริการที่สามารถเข้าไปทำงาน</p>
+        <br>
+      </ion-col>
+    </ion-row>
+
+    <ion-list>
+      <ion-item *ngFor="let item of items">
+          <p>{{ item.id }} {{ item.name }}</p>
+        <button ion-button item-end icon-only clear (click)="alertChangeService()">
+          <p><ion-icon name="md-exit" color="dark-green"></ion-icon></p>
+        </button>
+      </ion-item>
+    </ion-list>
+  </ion-grid>
+</ion-content>
+<ion-footer>
+  <div class="text-center">
+    <p class="s">ท่านสามารถแจ้งผู้ดูแลระบบของแต่ละหน่วยบริการเพื่อเพิ่มท่านเข้าไปในรายชื่อที่อนุญาตให้เข้าใช้งานได้ ที่
+    <br> https://www.thaicarecloud.org/
+    <br> เมนู ตั้งค่า -> สมาชิกในหน่วยงาน</p>
+  </div>
+</ion-footer>

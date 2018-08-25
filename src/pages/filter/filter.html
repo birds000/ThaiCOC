@@ -1,0 +1,45 @@
+<ion-header>
+  <ion-navbar color="dark-green">
+    <ion-title>Filter</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-card>
+    <ion-item>
+      <ion-label>เลือกโรค</ion-label>
+      <ion-checkbox color="dark" [(ngModel)]="visible1"></ion-checkbox>
+    </ion-item>
+    <ion-item *ngIf="visible1">
+      <ion-label>เลือกโรค</ion-label>
+      <ion-select>
+        <ion-option *ngFor="let type of typeDis" value="{{ type }}">{{ type }}</ion-option>
+      </ion-select>
+    </ion-item>
+  </ion-card>
+
+  <ion-card>
+    <ion-item>
+      <ion-label>เลือกช่วงเวลา</ion-label>
+      <ion-checkbox color="dark" [(ngModel)]="visible2"></ion-checkbox>
+    </ion-item>
+
+    <ion-grid >
+      <ion-row>
+        <ion-col col-6>
+          <ion-item *ngIf="visible2">
+            <ion-datetime displayFormat="DD MM YYYY" pickerFormat="DD MMM YYYY" placeholder="วว/ดด/ปปปป"></ion-datetime>
+          </ion-item>
+        </ion-col>
+        <ion-col col-6>
+          <ion-item *ngIf="visible2">
+            <ion-datetime displayFormat="DD MM YYYY" pickerFormat="DD MMM YYYY" placeholder="วว/ดด/ปปปป"></ion-datetime>
+          </ion-item>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </ion-card>
+
+  <button ion-button full round color="dark-green" (click)="pop()">ยืนยัน</button>
+
+</ion-content>

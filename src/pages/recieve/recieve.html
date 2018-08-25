@@ -1,0 +1,97 @@
+<ion-header>
+
+  <ion-navbar color="dark-green">
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>รับ refer</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+<ion-content class="grid-page">
+
+  <ion-row>
+    <ion-col col-12 class="text-center">
+      <div>
+        <p class="headerRefer">
+          <b>ทั้งหมด 10 รายการ</b>
+        </p>
+      </div>
+    </ion-col>
+  </ion-row>
+
+  <ion-row>
+    <ion-col col-12>
+      <p class="date">
+        <b>27 ก.ค. 2560</b>
+      </p>
+    </ion-col>
+  </ion-row>
+
+  <ion-grid *ngFor="let item of items">
+    <ion-row>
+      <ion-col col-9>
+        <div>
+          <p>
+            <b>{{ item.id }} {{ item.name }}</b>
+            <br> ส่งมาจาก {{ item.idHptRefer }} -> {{ item.idHptReceive }}
+            <br>
+            <b>ประเภทความรุนแรง :</b>
+            </p>
+        </div>
+      </ion-col>
+      <ion-col col-3>
+      </ion-col>
+    </ion-row>
+
+    <ion-row>
+      <ion-col col-9>
+        <div>
+          <p>กลุ่ม {{ item.type }}</p>
+        </div>
+      </ion-col>
+      <ion-col col-3>
+        <div class="text-left">
+          <p><ion-icon name="home" color="dark-green"></ion-icon></p>
+        </div>
+      </ion-col>
+    </ion-row>
+
+    <ion-row>
+      <p>
+        <b>ผลวินิฉัย :</b> {{ item.diagnosis }}
+        <br> <b>ที่อยู่ :</b> {{ item.address }}
+        <br> <b>โทร.</b> {{ item.tel }}
+      </p>
+    </ion-row>
+
+    <ion-row>
+      <ion-col col-4>
+        <div class="text-center">
+          <button ion-button icon-left clear (click)="gotoWorklist()" color="dark-green">
+            <p><ion-icon name="md-checkmark-circle"></ion-icon></p>
+            <p> รับ</p>
+          </button>
+        </div>
+      </ion-col>
+      <ion-col col-4>
+        <div class="text-center">
+          <button ion-button icon-left clear color="danger" (click)="alertMove()">
+            <p><ion-icon name="md-car"></ion-icon></p>
+            <p>ย้าย</p>
+          </button>
+        </div>
+      </ion-col>
+      <ion-col col-4>
+        <div class="text-center">
+          <button ion-button icon-left clear (click)="gotoFornex()">
+            <p><ion-icon name="eye"></ion-icon></p>
+            <p>ดูฟอร์ม</p>
+          </button>
+        </div>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+</ion-content>

@@ -1,0 +1,35 @@
+<ion-content padding>
+  <ion-grid>
+    <ion-row style="padding-top:30%">
+      <ion-col col-12 class="text-center">
+        <img width="40%" height="100%" src="assets/imgs/thaicoc.jpg">
+      </ion-col>   
+    </ion-row>
+    
+    <ion-row padding>
+      <ion-col col-12>
+        
+        <ion-list> 
+          <ion-row>
+            <ion-item>
+              <ion-input type="text" placeholder="Username" #username></ion-input>
+            </ion-item>
+          </ion-row>
+          
+          <ion-row>
+            <ion-item>
+              <ion-input type="password" placeholder="Password" #password></ion-input>
+            </ion-item>
+          </ion-row>
+      
+          
+          <ion-row style="padding-top:40px">
+            <button ion-button full round (click)="signin()" color="dark-green"><p>LOG IN</p></button>
+          </ion-row>
+        </ion-list>
+
+      </ion-col>
+    </ion-row>
+  
+  </ion-grid>
+</ion-content>

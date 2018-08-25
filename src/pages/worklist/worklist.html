@@ -1,0 +1,96 @@
+<ion-header>
+
+  <ion-navbar color="dark-green">
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Timeline</ion-title>
+
+    <ion-buttons end>
+      <button ion-button icon-only (click)="gotoFilter()">
+        <ion-icon name="ios-funnel"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content class="grid-page">
+
+  <ion-row>
+    <ion-col col-9>
+      <ion-searchbar (ionInput)="getItems($event)" color="primary" placeholder="ชื่อผู้ป่วย"></ion-searchbar>
+    </ion-col>
+
+    <ion-col col-3 class="text-center">
+      <button ion-button clear color="dark-green" (click)="showCalendar()">
+        <ion-icon name="md-calendar" style="font-size:50px"></ion-icon>
+      </button>
+    </ion-col>
+  </ion-row>
+
+  <ion-row>
+    <ion-col col-12>
+      <p class="date">
+        <b>27 ก.ค. 2560</b>
+      </p>
+    </ion-col>
+  </ion-row>
+  <ion-card *ngFor="let item of items">
+    <ion-card-content>
+      <p>
+        <b>{{ item.perfix }} {{ item.name }}</b>
+      </p>
+      <ion-row>
+        <ion-col col-6>
+          <p>อายุ {{ item.age }} ปี เพศ {{ item.sex }}</p>
+        </ion-col>
+        <ion-col col-6 class="text-right">
+          <p>{{ item.idHptReceive }} -> {{ item.idHptRefer }}</p>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col col-3>
+          <p>27/7</p>
+        </ion-col>
+        <ion-col col-6>
+          <p>ส่งต่อผู้ป่วย</p>
+        </ion-col>
+        <ion-col col-3 class="text-center">
+         <p> <ion-icon name="md-eye"></ion-icon></p>
+        </ion-col>
+      </ion-row>
+
+      <ion-row>
+        <ion-col col-3>
+          <p>ค้าง</p>
+        </ion-col>
+        <ion-col col-6>
+          <p>ฟอร์มจิตเวช</p>
+        </ion-col>
+        <ion-col col-3 class="text-center">
+         <p> <ion-icon name="md-add"></ion-icon></p>
+        </ion-col>
+      </ion-row>
+
+      <ion-row>
+        <ion-col col-3>
+          <p>ค้าง</p>
+        </ion-col>
+        <ion-col col-6>
+          <p>ฟอร์มผู้สูงอายุ</p>
+        </ion-col>
+        <ion-col col-3 class="text-center">
+         <p> <ion-icon name="md-add"></ion-icon></p>
+        </ion-col>
+      </ion-row>
+
+      <button ion-button icon-left full clear (click)="addform()" class="mar">
+        <p><ion-icon name="md-add-circle" color="primary"></ion-icon></p>
+        <p>เพิ่มฟอร์ม</p>
+      </button>
+    </ion-card-content>
+  </ion-card>
+
+</ion-content>

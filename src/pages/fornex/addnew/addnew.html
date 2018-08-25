@@ -1,0 +1,21 @@
+<ion-header>
+
+  <ion-navbar color="dark-green">
+    <ion-title>เพิ่มฟอร์ม</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <ion-item>
+    <ion-label>เลือกฟอร์ม</ion-label>
+    <ion-select>
+      <ion-option *ngFor="let form of forms" value="{{form}}">{{form}}</ion-option>
+    </ion-select>
+  </ion-item>
+  <br>
+  <button ion-button color="dark-green" round full (click)="pop()">
+    ยืนยัน
+  </button>
+</ion-content>
